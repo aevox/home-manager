@@ -1,5 +1,4 @@
-{config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   imports = [
     ./nvim/nvim.nix
     ./zsh/zsh.nix
@@ -42,7 +41,8 @@
     unixtools.netstat
     tree
     htop
-    xorg.xev xorg.xkill
+    xorg.xev
+    xorg.xkill
 
     jq
     yq
@@ -115,9 +115,9 @@
     enableZshIntegration = true;
     defaultCommand = ''ag --hidden -g \"\"'';
     fileWidgetCommand = ''ag --hidden -g \"\"'';
-    fileWidgetOptions = ["--preview 'bat -p --color=always --line-range :500 {}'"];
+    fileWidgetOptions = [ "--preview 'bat -p --color=always --line-range :500 {}'" ];
     changeDirWidgetCommand = ''fd --type d --hidden --follow --exclude \".git\"'';
-    changeDirWidgetOptions = ["--preview 'tree -C -L 2 {} | head -200'"];
+    changeDirWidgetOptions = [ "--preview 'tree -C -L 2 {} | head -200'" ];
   };
 
   programs.autojump = {
@@ -132,7 +132,7 @@
 
   services.gnome-keyring = {
     enable = true;
-    components = ["pkcs11" "secrets" "ssh"];
+    components = [ "pkcs11" "secrets" "ssh" ];
   };
 
   # Beware that pinentry-gnome3 may not work on non-Gnome systems.
@@ -149,7 +149,7 @@
     enable = false;
     settings = {
       history = "100000";
-      window.opacity = 0.90;
+      window.opacity = 0.9;
       cursor.style.blinking = "On";
       font.size = 12;
       colors = {

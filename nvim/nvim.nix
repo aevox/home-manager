@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   programs.neovim = let
     pastemode-vim = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -25,7 +23,7 @@
         repo = "Dockerfile.vim";
         rev = "2a31e6bcea5977209c05c728c4253d82fd873c82";
         sha256 = "MiSGZ5MJ5g37szUuo8XCbuzuAcNBSqYY6hVa/WJwLDY=";
-        };
+      };
       meta.homepage = "https://github.com/ekalinin/Dockerfile.vim";
     };
   in {
@@ -53,26 +51,23 @@
       }
       {
         plugin = nerdtree;
-        config = ''
-          nmap <F3> :NERDTreeToggle<CR>'';
+        config = "nmap <F3> :NERDTreeToggle<CR>";
       }
       {
         plugin = tagbar;
-        config = ''
-          nmap <F4> :TagbarToggle<CR>'';
+        config = "nmap <F4> :TagbarToggle<CR>";
       }
       {
         plugin = indentLine;
         config = ''
-         let g:indentLine_enabled = 0
-         nmap <F5> :IndentLinesToggle<CR>'';
+          let g:indentLine_enabled = 0
+          nmap <F5> :IndentLinesToggle<CR>'';
       }
 
       # lightcode
       {
         plugin = pastemode-vim;
-        config = ''
-          nnoremap <silent> <F2> :PasteModeToggle<cr>'';
+        config = "nnoremap <silent> <F2> :PasteModeToggle<cr>";
       }
       gruvbox
       vim-airline-themes
@@ -82,13 +77,11 @@
 
       {
         plugin = vim-terraform;
-        config = ''
-          let g:terraform_fmt_on_save = 1'';
+        config = "let g:terraform_fmt_on_save = 1";
       }
       {
         plugin = vim-markdown;
-        config = ''
-          let g:vim_markdown_folding_disabled = 1'';
+        config = "let g:vim_markdown_folding_disabled = 1";
       }
       {
         plugin = vim-go;
