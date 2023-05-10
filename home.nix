@@ -42,6 +42,7 @@
     unixtools.netstat
     tree
     htop
+    xorg.xev xorg.xkill
 
     jq
     yq
@@ -84,6 +85,7 @@
     firefox
     chromium
     google-chrome
+    youtube-music
 
     rocketchat-desktop
     jitsi-meet-electron
@@ -160,7 +162,7 @@
           red = "0xFF301B";
           green = "0xA0E521";
           yellow = "0xFFC620";
-          blue = "0x1BA6FA";
+          blue = "0x1D7FF3";
           magenta = "0x8763B8";
           cyan = "0x21DEEF";
           white = "0xe5e5e5";

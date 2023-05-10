@@ -67,6 +67,7 @@
     enable = false;
     enableZshIntegration = true;
     settings = {
+      format = "$all $kubernetes$line_break$character";
       right_format = "$cmd_duration";
       add_newline = false;
       directory = {
@@ -79,19 +80,39 @@
       };
       time = {
         disabled = true;
-        format = "\[$time\]($style)";
+        format = "\\[$time\\]($style)";
       };
       cmd_duration = {
         format = "[$duration]($style)";
       };
-      nix_shell = {
-        symbol = "❄️ ";
-        format = "[$symbol$state(\\($name\\))]($style)";
-      };
       git_branch = {
         symbol = "";
+        style = "green";
         format = "[$symbol$branch(:$remote_branch)]($style)";
       };
+      nix_shell = {
+        symbol = " ";
+        style = "cyan";
+        format = "[$symbol$state(\\($name\\))]($style)";
+      };
+      kubernetes = {
+        disabled = false;
+        symbol = "⚓";
+        format = "[$symbol$context(\\($namespace\\))]($style)";
+        style = "purple";
+      };
+#      custom.kswitch = {
+#        command = "kubectl config current-context ";
+#        when = ''test $(kswitch --json | jq -e -r '. | select(.tunnel.status == "up") | select(.context == .tunnel.zone) | .context') = $(kubectl config current-context)'';
+#        style = "purple";
+#        format = "[ ⚓K/$output]($style) ";
+#      };
+#      custom.rswitch = {
+#        command = "kubectl config current-context | sed -e 's/^rswitch-//'";
+#        when = "kubectl config current-context | grep -q ^rswitch-";
+#        style = "purple";
+#        format = "[ ⚓R/$output]($style) ";
+#      };
     };
   };
 }
