@@ -28,8 +28,8 @@
     plugins = with pkgs; [
       {
         name = "powerlevel10k";
-        file = "powerlevel10k.zsh-theme";
         src = "${zsh-powerlevel10k}/share/zsh-powerlevel10k";
+        file = "powerlevel10k.zsh-theme";
       }
       {
         name = "powerlevel10k-config";
@@ -38,27 +38,18 @@
       }
       {
         name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.7.0";
-          sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
-        };
+        src = "${zsh-autosuggestions}/share/zsh-autosuggestions";
+        file = "zsh-autosuggestions.zsh";
       }
       {
         name = "zsh-nix-shell";
+        src = "${zsh-nix-shell}/share/zsh-nix-shell";
         file = "nix-shell.plugin.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.6.0";
-          sha256 = "0r73i9jbxqmbra7cxms0r3ickkymg1c1n4nc3ywvjzcyiac9sj87";
-        };
       }
       {
         name = "zsh-fast-syntax-highlighting";
-        src = "${zsh-fast-syntax-highlighting}";
-        file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+        src = "${zsh-fast-syntax-highlighting}/share/zsh/site-functions/";
+        file = "fast-syntax-highlighting.plugin.zsh";
       }
     ];
   };

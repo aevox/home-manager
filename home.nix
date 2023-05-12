@@ -86,6 +86,7 @@
     chromium
     google-chrome
     youtube-music
+    whatsapp-for-linux
 
     rocketchat-desktop
     jitsi-meet-electron
