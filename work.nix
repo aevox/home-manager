@@ -12,7 +12,7 @@ in {
     nixgl.nixGLIntel
   ];
 
-  programs.git.userEmail = "marc.fouche@orange.fr";
+  programs.git.userEmail = "marc.fouche@orange.com";
 
   xdg.desktopEntries.Alacritty = {
     name = "Alacritty";
