@@ -12,6 +12,7 @@ in {
   home.packages = with pkgs; [
     gnomeExtensions.pop-shell
     gnomeExtensions.space-bar
+    gnomeExtensions.rounded-window-corners
   ]
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
         [ gnome-tray-icons-reloaded-25 ]
@@ -40,8 +41,9 @@ in {
 
       toggle-stacking-global = ["<Super>u"];
     };
-    "org/gnome/desktop/wn/keybindings" = {
+    "org/gnome/desktop/wm/keybindings" = {
       toggle-maximized = ["<Super>e"];
+      close = ["<Super>q" "<Alt>F4"];
     };
     "org/gnome/shell/extensions/space-bar/behavior" = {
       show-empty-workspaces = false;
