@@ -1,17 +1,21 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   imports = [
     ./nvim/nvim.nix
+    ./gnome/gnome.nix
     ./zsh/zsh.nix
+    ./gnome/gnome.nix
+
     ./dotfiles/dotfiles.nix
-    ./i3/i3.nix
-    ./dunst.nix
-    #./ubuntu.nix
-  ];
+  ]
+  ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
+        [ ./work.nix ]
+      else
+        []);
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "marc";
-  home.homeDirectory = "/home/marc";
+  home.username = lib.mkDefault "marc";
+  home.homeDirectory = lib.mkDefault "/home/marc";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -25,10 +29,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  targets.genericLinux.enable = true;
-
-  xsession.enable = true;
 
   fonts.fontconfig.enable = true;
 
@@ -76,7 +76,6 @@
 
     # Apps
     rofi
-    xfce.xfce4-terminal
     libreoffice
     okular
     thunderbird
@@ -97,14 +96,14 @@
     docker
     docker-compose
 
-    (nerdfonts.override { fonts = [ "Hack" "DroidSansMono" ]; })
+    (nerdfonts.override { fonts = [ "Hack" "DroidSansMono" "Ubuntu"]; })
   ];
 
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
     userName = "Marc Fouché";
-    userEmail = "marc.fouche@orange.fr";
+    userEmail = lib.mkDefault "fouche.marc@gmail.fr";
     extraConfig = {
       pull.ff = "only";
       url."git@git.corp.caascad.com:caascad".insteadOf = "git@git.corp.cloudwatt.com:caascad";
@@ -143,16 +142,27 @@
     enable = true;
     enableZshIntegration = true;
     enableSshSupport = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "tty";
   };
 
   programs.alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       history = "100000";
-      window.opacity = 0.9;
+      window = {
+        opacity = 0.9;
+        decorations = "none";
+      };
       cursor.style.blinking = "On";
-      font.size = 12;
+      font = {
+        size = 12;
+        normal = {
+          family = "Hack Nerd Font Mono";
+        };
+      };
+      mouse = {
+        hide_when_typing = true;
+      };
       colors = {
         primary = {
           background = "0x000000";
@@ -182,4 +192,3 @@
     };
   };
 }
-
