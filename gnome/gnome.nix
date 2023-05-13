@@ -1,11 +1,17 @@
 { config, pkgs, ... }: 
 let
   nixpkgs-gnome-tray-icons-reload-25 = import (builtins.fetchTarball {
-    url =
-      "https://github.com/NixOS/nixpkgs/archive/c2c0373ae7abf25b7d69b2df05d3ef8014459ea3.tar.gz";
+    url = "https://github.com/NixOS/nixpkgs/archive/c2c0373ae7abf25b7d69b2df05d3ef8014459ea3.tar.gz";
   }) { };
   gnome-tray-icons-reloaded-25 =
     nixpkgs-gnome-tray-icons-reload-25.gnomeExtensions.tray-icons-reloaded;
+
+  nixpkgs-gnome-tray-icons-reload-26 = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8.tar.gz";
+  }) { };
+  gnome-tray-icons-reloaded-26 =
+    nixpkgs-gnome-tray-icons-reload-26.gnomeExtensions.tray-icons-reloaded;
+
 
   nixgl = import <nixgl> {};
 in {
@@ -17,7 +23,7 @@ in {
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
         [ gnome-tray-icons-reloaded-25 ]
       else
-        [ gnomeExtensions.tray-icons-reloaded ]);
+        [ gnome-tray-icons-reloaded-26 ]);
 
   dconf.settings = {
     "org/gnome/shell/extensions/pop-shell" = {
