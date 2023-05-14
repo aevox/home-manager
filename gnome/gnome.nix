@@ -60,7 +60,6 @@ in {
       switch-to-workspace-10 = ["<Super>0"];
       switch-to-workspace-11 = ["<Super>equal"];
       switch-to-workspace-12 = ["<Super>grave"];
-
       move-to-workspace-1 = ["<Super><Shift>1"];
       move-to-workspace-2 = ["<Super><Shift>2"];
       move-to-workspace-3 = ["<Super><Shift>3"];
@@ -73,7 +72,22 @@ in {
       move-to-workspace-10 = ["<Super><Shift>0"];
       move-to-workspace-11 = ["<Super><Shift>equal"];
       move-to-workspace-12 = ["<Super><Shift>grave"];
-
+    };
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = ["<Alt>1"];
+      switch-to-application-2 = ["<Alt>2"];
+      switch-to-application-3 = ["<Alt>3"];
+      switch-to-application-4 = ["<Alt>4"];
+      switch-to-application-5 = ["<Alt>5"];
+      switch-to-application-6 = ["<Alt>6"];
+      switch-to-application-7 = ["<Alt>7"];
+      switch-to-application-8 = ["<Alt>8"];
+      switch-to-application-9 = ["<Alt>9"];
+      toggle-application-view = ["<Super>a"];
+      toggle-message-tray = ["<Super>v"];
+      toggle-overview = [];
+      focus-active-notification = [];
+      open-applaction-menu = [];
     };
     "org/gnome/shell/extensions/space-bar/behavior" = {
       show-empty-workspaces = false;
