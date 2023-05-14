@@ -20,6 +20,7 @@ in {
     gnomeExtensions.sound-output-device-chooser
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.impatience
+    gnomeExtensions.dash-to-panel
     gnome.dconf-editor
   ]
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
