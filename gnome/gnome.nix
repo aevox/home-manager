@@ -12,16 +12,21 @@ let
   gnome-tray-icons-reloaded-26 =
     nixpkgs-gnome-tray-icons-reload-26.gnomeExtensions.tray-icons-reloaded;
 in {
+
   home.packages = with pkgs; [
     gnomeExtensions.pop-shell
     gnomeExtensions.space-bar
     gnomeExtensions.rounded-window-corners
+    gnomeExtensions.sound-output-device-chooser
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.impatience
     gnome.dconf-editor
   ]
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
         [ gnome-tray-icons-reloaded-25 ]
       else
-        [ gnome-tray-icons-reloaded-26 ]);
+      [ gnome-tray-icons-reloaded-26
+        gnomeExtensions.caffeine]);
 
   dconf.settings = {
     "org/gnome/shell/extensions/pop-shell" = {
@@ -105,6 +110,7 @@ in {
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
       workspaces-only-on-primary = true;
+      switch-monitor = ["XF86Display"];
     };
     "org/gnome/shell/extensions/space-bar/behavior" = {
       show-empty-workspaces = false;
