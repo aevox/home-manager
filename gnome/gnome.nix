@@ -96,6 +96,10 @@ in {
     "org/gnome/shell/overrides" = {
       dynamic-workspaces = false;
     };
+    "org/gnome/shell/mutter" = {
+      dynamic-workspaces = false;
+      workspaces-only-on-primary = true;
+    };
     "org/gnome/shell/extensions/space-bar/behavior" = {
       show-empty-workspaces = false;
       smart-workspace-names = true;
