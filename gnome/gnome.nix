@@ -55,6 +55,7 @@ in {
       tile-move-right-global = ["<Super><Shift>n" "<Super><Shift>Right"];
 
       toggle-stacking-global = ["<Super>u"];
+      hint-color-rgba = "rgb(0,100,225)";
     };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 12;
