@@ -16,6 +16,7 @@ in {
     gnomeExtensions.pop-shell
     gnomeExtensions.space-bar
     gnomeExtensions.rounded-window-corners
+    gnome.dconf-editor
   ]
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
         [ gnome-tray-icons-reloaded-25 ]
