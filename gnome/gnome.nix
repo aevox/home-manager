@@ -44,6 +44,9 @@ in {
 
       toggle-stacking-global = ["<Super>u"];
     };
+    "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 12;
+    };
     "org/gnome/desktop/wm/keybindings" = {
       toggle-maximized = ["<Super>e"];
       close = ["<Super>q" "<Alt>F4"];
