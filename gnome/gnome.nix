@@ -92,6 +92,9 @@ in {
       focus-active-notification = [];
       open-applaction-menu = [];
     };
+    "org/gnome/shell/overrides" = {
+      dynamic-workspaces = false;
+    };
     "org/gnome/shell/extensions/space-bar/behavior" = {
       show-empty-workspaces = false;
       smart-workspace-names = true;
