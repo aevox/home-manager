@@ -150,8 +150,11 @@
     settings = {
       history = "100000";
       window = {
+        padding = {
+          x = 6;
+          y = 6;
+        };
         opacity = 0.9;
-        decorations = "none";
       };
       cursor.style.blinking = "On";
       font = {
