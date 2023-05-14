@@ -12,6 +12,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 ## Nixpkgs channel
 add channel nixpkgs-unstable:
 ```bash
+nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
