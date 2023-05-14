@@ -96,7 +96,7 @@ in {
     "org/gnome/shell/overrides" = {
       dynamic-workspaces = false;
     };
-    "org/gnome/shell/mutter" = {
+    "org/gnome/mutter" = {
       dynamic-workspaces = false;
       workspaces-only-on-primary = true;
     };
