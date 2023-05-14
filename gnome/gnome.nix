@@ -26,8 +26,7 @@ in {
   ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
         [ gnome-tray-icons-reloaded-25 ]
       else
-      [ gnome-tray-icons-reloaded-26
-        gnomeExtensions.caffeine]);
+      [ gnome-tray-icons-reloaded-26 ]);
 
   dconf.settings = {
     "org/gnome/shell/extensions/pop-shell" = {
