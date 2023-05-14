@@ -47,18 +47,6 @@ in {
     "org/gnome/desktop/wm/keybindings" = {
       toggle-maximized = ["<Super>e"];
       close = ["<Super>q" "<Alt>F4"];
-    };
-    "org/gnome/shell/extensions/space-bar/behavior" = {
-      show-empty-workspaces = false;
-      smart-workspace-names = true;
-    };
-    "org/gnome/shell/extensions/space-bar/shortcuts" = {
-      enable-activate-workspace-shortcuts = false;
-      enable-move-to-workspace-shortcuts = false;
-      activate-previous-keys = [];
-    };
-    "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Super>q" "<Alt>F4"];
 
       switch-to-workspace-1 = ["<Super>1"];
       switch-to-workspace-2 = ["<Super>2"];
@@ -85,6 +73,16 @@ in {
       move-to-workspace-10 = ["<Super><Shift>0"];
       move-to-workspace-11 = ["<Super><Shift>equal"];
       move-to-workspace-12 = ["<Super><Shift>grave"];
+
+    };
+    "org/gnome/shell/extensions/space-bar/behavior" = {
+      show-empty-workspaces = false;
+      smart-workspace-names = true;
+    };
+    "org/gnome/shell/extensions/space-bar/shortcuts" = {
+      enable-activate-workspace-shortcuts = false;
+      enable-move-to-workspace-shortcuts = false;
+      activate-previous-keys = [];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
