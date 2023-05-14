@@ -33,10 +33,16 @@ in {
 
       tile-enter = ["<Super>b"];
       tile-accept = ["Return" "<Super>b" "b"];
-      tile-move-left = ["t" "Left"];
-      tile-move-down = ["s" "Down"];
-      tile-move-up = ["r" "Up"];
-      tile-move-right = ["n" "Right"];
+      tile-move-left = [];
+      tile-move-down = [];
+      tile-move-up = [];
+      tile-move-right = [];
+
+      tile-resize-left = ["t" "Left"];
+      tile-resize-down = ["s" "Down"];
+      tile-resize-up = ["r" "Up"];
+      tile-resize-right = ["n" "Right"];
+
 
       tile-move-left-global = ["<Super><Shift>t" "<Super><Shift>Left"];
       tile-move-down-global = ["<Super><Shift>s" "<Super><Shift>Down"];
