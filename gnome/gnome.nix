@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }:
 let
   nixpkgs-gnome-tray-icons-reload-25 = import (builtins.fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/c2c0373ae7abf25b7d69b2df05d3ef8014459ea3.tar.gz";
@@ -11,9 +11,6 @@ let
   }) { };
   gnome-tray-icons-reloaded-26 =
     nixpkgs-gnome-tray-icons-reload-26.gnomeExtensions.tray-icons-reloaded;
-
-
-  nixgl = import <nixgl> {};
 in {
   home.packages = with pkgs; [
     gnomeExtensions.pop-shell
@@ -56,8 +53,55 @@ in {
       smart-workspace-names = true;
     };
     "org/gnome/shell/extensions/space-bar/shortcuts" = {
-      enable-activate-workspace-shortcuts = true;
-      enable-move-to-workspace-shortcuts = true;
+      enable-activate-workspace-shortcuts = false;
+      enable-move-to-workspace-shortcuts = false;
+      activate-previous-keys = [];
+    };
+    "org/gnome/desktop/wm/keybindings" = {
+      close = ["<Super>q" "<Alt>F4"];
+
+      switch-to-workspace-1 = ["<Super>1"];
+      switch-to-workspace-2 = ["<Super>2"];
+      switch-to-workspace-3 = ["<Super>3"];
+      switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-5 = ["<Super>5"];
+      switch-to-workspace-6 = ["<Super>6"];
+      switch-to-workspace-7 = ["<Super>7"];
+      switch-to-workspace-8 = ["<Super>8"];
+      switch-to-workspace-9 = ["<Super>9"];
+      switch-to-workspace-10 = ["<Super>0"];
+      switch-to-workspace-11 = ["<Super>equal"];
+      switch-to-workspace-12 = ["<Super>grave"];
+
+      move-to-workspace-1 = ["<Super><Shift>1"];
+      move-to-workspace-2 = ["<Super><Shift>2"];
+      move-to-workspace-3 = ["<Super><Shift>3"];
+      move-to-workspace-4 = ["<Super><Shift>4"];
+      move-to-workspace-5 = ["<Super><Shift>5"];
+      move-to-workspace-6 = ["<Super><Shift>6"];
+      move-to-workspace-7 = ["<Super><Shift>7"];
+      move-to-workspace-8 = ["<Super><Shift>8"];
+      move-to-workspace-9 = ["<Super><Shift>9"];
+      move-to-workspace-10 = ["<Super><Shift>0"];
+      move-to-workspace-11 = ["<Super><Shift>equal"];
+      move-to-workspace-12 = ["<Super><Shift>grave"];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = lib.mkDefault {
+      binding = "<Super>Return";
+      command = "alacritty";
+      name = "open-terminal";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = lib.mkDefault {
+      binding = "<Super>i";
+      command = "rofi -show run";
+      name = "rofi -show run";
     };
   };
 }

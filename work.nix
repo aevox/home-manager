@@ -17,6 +17,14 @@ in {
   xdg.desktopEntries.Alacritty = {
     name = "Alacritty";
     exec = "nixGLIntel alacritty";
+    icon = "Alacritty";
+  };
+  dconf.settings = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "nixGLIntel alacritty";
+      name = "open-terminal";
+    };
   };
 }
 
