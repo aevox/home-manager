@@ -142,7 +142,7 @@
     enable = true;
     enableZshIntegration = true;
     enableSshSupport = true;
-    pinentryFlavor = "tty";
+    pinentryFlavor = "gnome3";
   };
 
   programs.alacritty = {
