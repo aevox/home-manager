@@ -1,18 +1,10 @@
 { config, pkgs, lib, ... }:
 let
-  nixpkgs-2022-09-15 = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/c2c0373ae7abf25b7d69b2df05d3ef8014459ea3.tar.gz";
-  }) { };
-  nixpkgs-2023-01-13 = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/3c3b3ab88a34ff8026fc69cb78febb9ec9aedb16.tar.gz";
-    }) {};
   nixpkgs-2023-03-11 = import (builtins.fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8.tar.gz";
   }) { };
 
-  caffeine-42 = nixpkgs-2023-01-13.gnomeExtensions.caffeine;
-  gnome-tray-icons-reloaded-25 = nixpkgs-2022-09-15.gnomeExtensions.tray-icons-reloaded;
-  gnome-tray-icons-reloaded-26 = nixpkgs-2023-03-11.gnomeExtensions.tray-icons-reloaded;
+  control-blur-19 = nixpkgs-2023-03-11.gnomeExtensions.control-blur-effect-on-lock-screen;
 in {
 
   home.packages = with pkgs; [
@@ -21,20 +13,10 @@ in {
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.dash-to-panel
-    gnomeExtensions.sound-output-device-chooser
     gnomeExtensions.impatience
+    control-blur-19
     gnome.dconf-editor
-  ]
-  ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
-  [
-    gnome-tray-icons-reloaded-25
-    caffeine-42
-  ]
-     else
-  [
-    gnome-tray-icons-reloaded-26
-    gnomeExtensions.caffeine
-  ]);
+  ];
 
   dconf.settings = {
     "org/gnome/shell/extensions/pop-shell" = {

@@ -1,16 +1,15 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+let
+  hostnameFile = builtins.readFile "/proc/sys/kernel/hostname";
+  hostname = builtins.elemAt (builtins.split "\n" hostnameFile) 0;
+in {
   imports = [
-    ./nvim/nvim.nix
-    ./gnome/gnome.nix
-    ./zsh/zsh.nix
-    ./gnome/gnome.nix
+    ./machines/${hostname}.nix
 
+    ./nvim/nvim.nix
+    ./zsh/zsh.nix
     ./dotfiles/dotfiles.nix
-  ]
-  ++ (if builtins.getEnv "HOME" == "/home/knwk3963" then
-        [ ./work.nix ]
-      else
-        []);
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
