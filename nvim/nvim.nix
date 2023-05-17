@@ -28,8 +28,41 @@
     };
   in {
     enable = true;
+    defaultEditor = true;
     vimAlias = true;
     viAlias = true;
+    withNodeJs = true;
+    coc = {
+      enable = true;
+      pluginConfig = ''
+      inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+      inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+      inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
+
+      " use <tab> to trigger completion and navigate to the next complete item
+      function! CheckBackspace() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+      endfunction
+      inoremap <silent><expr> <Tab>
+        \ coc#pum#visible() ? coc#pum#next(1) :
+        \ CheckBackspace() ? "\<Tab>" :
+        \ coc#refresh()
+
+        " use <c-space> for trigger completion
+      inoremap <silent><expr> <c-space> coc#refresh()
+
+      inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+      inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+'';
+      settings = {
+        "suggest.noselect" = true;
+        "suggest.enablePreview" = true;
+        "suggest.enablePreselect" = false;
+        "suggest.disableKind" = true;
+      };
+    };
     plugins = with pkgs.vimPlugins; [
 
       dockerfile-vim
@@ -37,18 +70,17 @@
       tagbar
       fzf-vim
       indentLine
-      YouCompleteMe
       fugitive
       vimtex
-      {
-        plugin = YouCompleteMe;
-        config = ''
-          let g:ycm_gopls_binary_path = '${pkgs.gopls}/bin/gopls'
-          let g:ycm_auto_trigger = 1
-          let g:ycm_enable_inlay_hints = 1
-          let g:ycm_add_preview_to_completeopt = 0
-          let g:ycm_autoclose_preview_window_after_insertion = 1'';
-      }
+#      {
+#        plugin = YouCompleteMe;
+#        config = ''
+#          let g:ycm_gopls_binary_path = '${pkgs.gopls}/bin/gopls'
+#          let g:ycm_auto_trigger = 1
+#          let g:ycm_enable_inlay_hints = 1
+#          let g:ycm_add_preview_to_completeopt = 0
+#          let g:ycm_autoclose_preview_window_after_insertion = 1'';
+#      }
       {
         plugin = nerdtree;
         config = "nmap <F3> :NERDTreeToggle<CR>";

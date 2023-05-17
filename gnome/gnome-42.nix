@@ -13,6 +13,5 @@ in {
   home.packages = with pkgs; [
     tray-icons-reloaded-25
     gnomeExtensions.sound-output-device-chooser
-    caffeine-42
   ];
 }
