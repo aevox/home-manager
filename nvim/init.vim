@@ -97,6 +97,7 @@ autocmd GUIEnter * set vb t_vb=
 autocmd VimEnter * set vb t_vb=
 " Highlight current line number
 set cursorline
+au VimLeave,VimSuspend * set guicursor=a:ver25-blinkon0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  vimrc = builtins.readFile ./init.vim;
+in
 {
   home.sessionVariables = { EDITOR = "nvim"; };
 
@@ -172,6 +174,11 @@
           let g:airline#extensions#tabline#right_alt_sep = ""'';
       }
     ];
-    extraConfig = builtins.readFile ./init.vim;
+    extraConfig = ''
+      ${vimrc}
+
+      " Reset cursor to blinking "|" when exiting neovim
+      au VimLeave,VimSuspend * set guicursor=a:ver25-blinkon0
+      '';
   };
 }

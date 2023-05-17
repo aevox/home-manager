@@ -95,7 +95,7 @@ in {
     docker
     docker-compose
 
-    (nerdfonts.override { fonts = [ "Hack" "DroidSansMono" "Ubuntu"]; })
+    (nerdfonts.override { fonts = [ "Hack" "DroidSansMono"]; })
   ];
 
   programs.git = {
@@ -144,6 +144,19 @@ in {
     pinentryFlavor = "gnome3";
   };
 
+  programs.kitty = {
+    enable = true;
+    shellIntegration.enableZshIntegration = true;
+    settings = {
+      font_size = "12";
+      font_family = "Hack Nerd Font Regular";
+      bold_font = "Hack Nerd Bold";
+      italic_font = "Hack Nerd Italic";
+      bold_italic_font = "Hack Nerd Bold Italic";
+      background_opacity = "0.9";
+    };
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {
@@ -155,11 +168,16 @@ in {
         };
         opacity = 0.9;
       };
-      cursor.style.blinking = "On";
+      cursor = {
+        style = {
+          blinking = "Always";
+          shape = "Beam";
+        };
+      };
       font = {
         size = 12;
         normal = {
-          family = "Hack Nerd Font Mono";
+          family = "Hack Nerd Font";
         };
       };
       mouse = {
