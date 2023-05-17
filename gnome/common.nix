@@ -12,6 +12,7 @@ in {
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.appindicator
     gnomeExtensions.impatience
     control-blur-19
     gnome.dconf-editor
