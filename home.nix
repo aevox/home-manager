@@ -172,22 +172,22 @@ in {
         };
         normal = {
           black = "0x000000";
-          red = "0xFF301B";
-          green = "0xA0E521";
-          yellow = "0xFFC620";
-          blue = "0x1D7FF3";
-          magenta = "0x8763B8";
-          cyan = "0x21DEEF";
-          white = "0xe5e5e5";
+          red = "0xcc0403";
+          green = "0x19cb00";
+          yellow = "0xcecb00";
+          blue = "0x0d73cc";
+          magenta = "0xcb1ed1";
+          cyan = "0x0dcdcd";
+          white = "0xdddddd";
         };
         bright = {
-          black = "0x7f7f7f";
-          red = "0xFF4352";
-          green = "0xB8E466";
-          yellow = "0xFFD750";
-          blue = "0x1BA6FA";
-          magenta = "0xA578EA";
-          cyan = "0x73FBF1";
+          black = "0x767676";
+          red = "0xf2201f";
+          green = "0x23fd00";
+          yellow = "0xfffd00";
+          blue = "0x1a8fff";
+          magenta = "0xfd28ff";
+          cyan = "0x0dcdcd";
           white = "0xffffff";
         };
       };
