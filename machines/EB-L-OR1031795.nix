@@ -28,6 +28,11 @@ in {
     exec = "nixGLIntel kitty";
     icon = "kitty";
   };
+  xdg.desktopEntries."com.github.eneshecan.WhatsAppForLinux" = {
+    name = "WhatsAppForLinux";
+    exec = "nixGLIntel whatsapp-for-linux %u";
+    icon = "com.github.eneshecan.WhatsAppForLinux";
+  };
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
