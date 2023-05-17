@@ -4,11 +4,11 @@ let
 in {
   imports = [
     ../gnome/common.nix
-    ../gnome/ubuntu-22.04.nix
+    ../gnome/pop-os.nix
   ];
 
-  home.username = "knwk3963";
-  home.homeDirectory = "/home/knwk3963";
+  home.username = "marc";
+  home.homeDirectory = "/home/marc";
 
   targets.genericLinux.enable = true;
 
@@ -31,4 +31,3 @@ in {
     };
   };
 }
-

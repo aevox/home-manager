@@ -8,7 +8,6 @@ let
 in {
 
   home.packages = with pkgs; [
-    gnomeExtensions.pop-shell
     gnomeExtensions.space-bar
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.clipboard-indicator
@@ -101,6 +100,8 @@ in {
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
       workspaces-only-on-primary = true;
+    };
+    "org/gnome/mutter/keybindings" = {
       switch-monitor = ["XF86Display"];
     };
     "org/gnome/shell/extensions/space-bar/behavior" = {
@@ -123,11 +124,6 @@ in {
       binding = "<Super>Return";
       command = "alacritty";
       name = "open-terminal";
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = lib.mkDefault {
-      binding = "<Super>i";
-      command = "rofi -show run";
-      name = "rofi -show run";
     };
   };
 }

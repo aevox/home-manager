@@ -7,8 +7,15 @@ let
   tray-icons-reloaded-26 = nixpkgs-2023-03-11.gnomeExtensions.tray-icons-reloaded;
 in {
   home.packages = with pkgs; [
+    gnomeExtensions.pop-shell
     tray-icons-reloaded-26
     gnomeExtensions.caffeine
   ];
+  dconf.settings = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = lib.mkDefault {
+      binding = "<Super>i";
+      command = "rofi -show run";
+      name = "rofi -show run";
+    };
+  };
 }
-

@@ -11,7 +11,15 @@ let
   tray-icons-reloaded-25 = nixpkgs-2022-09-15.gnomeExtensions.tray-icons-reloaded;
 in {
   home.packages = with pkgs; [
+    gnomeExtensions.pop-shell
     tray-icons-reloaded-25
     gnomeExtensions.sound-output-device-chooser
   ];
+  dconf.settings = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = lib.mkDefault {
+      binding = "<Super>i";
+      command = "rofi -show run";
+      name = "rofi -show run";
+    };
+  };
 }

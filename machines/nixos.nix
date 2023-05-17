@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
     ../gnome/common.nix
-    ../gnome/gnome-43.nix
+    ../gnome/nixos-22.11.nix
   ];
 }
