@@ -1,30 +1,45 @@
-home-manager config
+# home-manager configuration
 
 This repository should be cloned as ~/.config/home-manager/
 
-# Install
+## Install
 
-## Nix
+### Nix
+
 install nix:
+
 ```bash
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
-## Nixpkgs channel
+
+### Nixpkgs channel
+
 add channel nixpkgs-unstable:
+
 ```bash
-nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
-## home-manager
-install home-manager:
+
+on non nixos systems:
+
 ```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
+nix-channel --update
+```
+
+### home-manager
+
+install home-manager:
+
+```bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
 ```
 
-# Uninstall everything
+## Uninstall everything
+
 ```bash
 home-manager uninstall
 sudo systemctl stop nix-daemon.service
