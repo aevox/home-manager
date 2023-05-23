@@ -21,6 +21,7 @@ in
         "suggest.enablePreselect" = false;
         "suggest.disableKind" = true;
         "diagnostic.displayByAle" = true;
+        "spell-checker.enable" = false;
       };
     };
     plugins = with pkgs.vimPlugins; [
@@ -41,7 +42,6 @@ in
       # Gui
       coc-prettier
       coc-pairs
-      coc-spell-checker
 
       vimtex
       vim-cue
