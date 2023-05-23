@@ -36,7 +36,7 @@ in {
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "nixGLIntel kitty";
+      command = "nixGLIntel Alacritty";
       name = "open-terminal";
     };
   };

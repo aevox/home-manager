@@ -122,7 +122,7 @@ in {
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = lib.mkDefault {
       binding = "<Super>Return";
-      command = "kitty";
+      command = "alacritty";
       name = "open-terminal";
     };
   };
