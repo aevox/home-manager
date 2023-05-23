@@ -43,7 +43,7 @@ set sidescrolloff=10
 " Highlight current line number
 set cursorline
 " Automatically show column sign
-set signcolumn=auto
+set signcolumn=number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
