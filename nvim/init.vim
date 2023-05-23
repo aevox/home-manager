@@ -40,6 +40,8 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set scrolloff=10
 " Keep at least 10 lines left/right
 set sidescrolloff=10
+" Do not show all the line if it is too long
+set nowrap
 " Highlight current line number
 set cursorline
 " Automatically show column sign
