@@ -3,7 +3,6 @@ let
   nixpkgs-2023-03-11 = import (builtins.fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8.tar.gz";
   }) { };
-
   control-blur-19 = nixpkgs-2023-03-11.gnomeExtensions.control-blur-effect-on-lock-screen;
 in {
 
@@ -123,7 +122,7 @@ in {
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = lib.mkDefault {
       binding = "<Super>Return";
-      command = "alacritty";
+      command = "kitty";
       name = "open-terminal";
     };
   };

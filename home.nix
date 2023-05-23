@@ -148,7 +148,9 @@ in {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
-      font_size = "12";
+      font_size = "11";
+      window_padding_width = "3";
+      enable_audio_bell = "no";
       font_family = "Hack Nerd Font Regular";
       bold_font = "Hack Nerd Bold";
       italic_font = "Hack Nerd Italic";
