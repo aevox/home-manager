@@ -83,7 +83,6 @@ in {
     firefox
     chromium
     google-chrome
-    youtube-music
     whatsapp-for-linux
 
     rocketchat-desktop
@@ -165,15 +164,14 @@ in {
       history = "100000";
       window = {
         padding = {
-          x = 6;
-          y = 6;
+          x = 3;
+          y = 2;
         };
         opacity = 0.9;
       };
       cursor = {
         style = {
           blinking = "Always";
-          shape = "Beam";
         };
       };
       font = {
