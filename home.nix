@@ -93,7 +93,7 @@ in {
     docker
     docker-compose
 
-    (nerdfonts.override { fonts = [ "Hack" "DroidSansMono"]; })
+    (nerdfonts.override { fonts = ["Hack" "Noto"]; })
   ];
 
   programs.git = {
@@ -146,7 +146,7 @@ in {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
-      font_size = "11";
+      font_size = "10";
       window_padding_width = "3";
       enable_audio_bell = "no";
       font_family = "Hack Nerd Font Regular";
@@ -163,8 +163,8 @@ in {
       history = "100000";
       window = {
         padding = {
-          x = 3;
-          y = 2;
+          x = 4;
+          y = 4;
         };
         opacity = 0.9;
       };

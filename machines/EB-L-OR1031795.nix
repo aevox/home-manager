@@ -20,12 +20,12 @@ in {
 
   xdg.desktopEntries.Alacritty = {
     name = "Alacritty";
-    exec = "nixGLIntel alacritty";
+    exec = "nixGLIntel alacritty %u";
     icon = "Alacritty";
   };
   xdg.desktopEntries.kitty = {
     name = "kitty";
-    exec = "nixGLIntel kitty";
+    exec = "nixGLIntel kitty %u";
     icon = "kitty";
   };
   xdg.desktopEntries."com.github.eneshecan.WhatsAppForLinux" = {
