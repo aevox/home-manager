@@ -74,7 +74,6 @@ in {
     python310Packages.flake8
 
     # Apps
-    rofi
     libreoffice
     okular
     thunderbird
