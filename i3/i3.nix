@@ -22,7 +22,7 @@ in {
 
   programs.i3status-rust.enable = true;
 
-  home.packages = with pkgs; [ i3 xborders xss-lock feh betterlockscreen ];
+  home.packages = with pkgs; [ i3 xborders xss-lock feh betterlockscreen rofi ];
 
   home.file = { ".config/i3/config".source = ./i3.config; };
 
