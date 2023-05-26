@@ -7,14 +7,11 @@ let
   caffeine-42 = nixpkgs-2023-01-13.gnomeExtensions.caffeine;
 in {
   home.packages = with pkgs; [
+    pop-launcher
+    pop-gtk-theme
+    pop-icon-theme
+    gnomeExtensions.pop-launcher-super-key
     gnomeExtensions.pop-shell
     gnomeExtensions.sound-output-device-chooser
   ];
-  dconf.settings = {
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = lib.mkDefault {
-      binding = "<Super>i";
-      command = "rofi -show run";
-      name = "rofi -show run";
-    };
-  };
 }
