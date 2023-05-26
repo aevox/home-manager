@@ -136,8 +136,8 @@ in
       ${vimrc}
       ${coc}
 
-      " Reset cursor to blinking "|" when exiting neovim
-      au VimLeave,VimSuspend * set guicursor=a:ver25-blinkon0
+      " Reset cursor to blinking block when exiting neovim
+      au VimLeave,VimSuspend * set guicursor=a:blinkon0
     '';
   };
 }
