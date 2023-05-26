@@ -21,7 +21,7 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 ```
 
-on non nixos systems:
+on non nixos systems, add:
 
 ```bash
 nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
