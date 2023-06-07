@@ -63,21 +63,23 @@ in {
 
     # Languages
     gcc
-    go
     gopls
     universal-ctags
 
-    python3Full
-    python310Packages.ipython
-    python310Packages.virtualenv
-    python310Packages.pip
-    python310Packages.flake8
+    python311Full
+    python311Packages.ipython
+    python311Packages.virtualenv
+    python311Packages.pip
+    python311Packages.flake8
+    python311Packages.rope
+    python311Packages.pylint
+    python311Packages.autopep8
 
     # Apps
     libreoffice
     okular
     thunderbird
-    texlive.combined.scheme-full
+    #texlive.combined.scheme-full
 
     firefox
     chromium
@@ -93,8 +95,12 @@ in {
     docker
     docker-compose
 
-    (nerdfonts.override { fonts = ["Hack" "Noto"]; })
+    (nerdfonts.override { fonts = ["Hack" "Noto" "DroidSansMono"]; })
+    arc-theme
+    papirus-icon-theme
   ];
+
+  programs.go.enable = true;
 
   programs.git = {
     enable = true;
