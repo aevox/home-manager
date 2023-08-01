@@ -22,6 +22,7 @@ in
         "suggest.disableKind" = true;
         "diagnostic.displayByAle" = true;
         "spell-checker.enable" = false;
+        "go.goplsPath" = "$HOME/.nix-profile/bin/gopls";
       };
     };
     plugins = with pkgs.vimPlugins; [
@@ -47,7 +48,6 @@ in
       vim-cue
       vim-nix
       vim-terraform
-      vim-go
 
       suda-vim
       fzf-vim

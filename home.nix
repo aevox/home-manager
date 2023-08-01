@@ -145,7 +145,7 @@ in {
     enable = true;
     enableZshIntegration = true;
     enableSshSupport = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "tty";
   };
 
   programs.kitty = {
