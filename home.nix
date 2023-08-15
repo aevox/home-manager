@@ -74,6 +74,7 @@ in {
     python311Packages.rope
     python311Packages.pylint
     python311Packages.autopep8
+    python311Packages.jedi
 
     # Apps
     libreoffice
