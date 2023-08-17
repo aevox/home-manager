@@ -110,10 +110,13 @@ nnoremap <silent> <leader>s :call StripTrailingWhitespaces()<cr>
 nnoremap <silent> <leader>f :Files<cr>
 nnoremap <silent> <leader>F :Ag<cr>
 
-" " Copy to clipboard
+" Copy to clipboard
 vnoremap  <leader>y  "+y<cr>
-" " Paste from clipboard
+" Paste from clipboard
 nnoremap <leader>p "+p<cr>
+" Make x not yank what it deletes
+nnoremap x "_x
+
 
 " " Workaround for 'clipboard=autoselect', it copies mouse selection into
 " * register
