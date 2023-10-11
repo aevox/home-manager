@@ -89,7 +89,6 @@ in {
 
     rocketchat-desktop
     jitsi-meet-electron
-    teams
     discord
     variety
 
