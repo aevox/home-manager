@@ -3,8 +3,8 @@ let
   nixgl = import <nixgl> {};
 in {
   imports = [
-    ../gnome/common.nix
-    ../gnome/ubuntu-22.04.nix
+    ../gnome/gnome-42.nix
+    ../gnome/pop-shell.nix
   ];
 
   home.username = "knwk3963";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   vimrc = builtins.readFile ./init.vim;
   bepo = builtins.readFile ./bepo.vim;
@@ -22,7 +22,7 @@ in
         "suggest.disableKind" = true;
         "diagnostic.displayByAle" = true;
         "spell-checker.enable" = false;
-        "go.goplsPath" = "$HOME/.nix-profile/bin/gopls";
+        "go.goplsPath" = lib.mkAfter "${config.home.homeDirectory}/.nix-profile/bin/gopls";
       };
     };
     plugins = with pkgs.vimPlugins; [

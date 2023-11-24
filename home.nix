@@ -86,6 +86,7 @@ in {
     chromium
     google-chrome
     whatsapp-for-linux
+    teams-for-linux
 
     rocketchat-desktop
     jitsi-meet-electron

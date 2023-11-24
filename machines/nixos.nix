@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
-    ../gnome/common.nix
-    ../gnome/nixos-22.11.nix
+    ../gnome/gnome-44.nix
+    ../gnome/pop-shell.nix
   ];
   home.packages = with pkgs; [
     youtube-music

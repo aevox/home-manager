@@ -5,6 +5,5 @@
     pop-icon-theme
     gnomeExtensions.pop-launcher-super-key
     gnomeExtensions.pop-shell
-    gnomeExtensions.caffeine
   ];
 }
