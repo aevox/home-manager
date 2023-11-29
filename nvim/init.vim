@@ -106,10 +106,6 @@ nnoremap <silent> <leader>n :bnext<cr>
 " Strip trailing whitespace
 nnoremap <silent> <leader>s :call StripTrailingWhitespaces()<cr>
 
-" Open file/word searcher with fzf-vim plugin
-nnoremap <silent> <leader>f :Files<cr>
-nnoremap <silent> <leader>F :Ag<cr>
-
 " Copy to clipboard
 vnoremap  <leader>y  "+y<cr>
 " Paste from clipboard
@@ -119,7 +115,7 @@ nnoremap x "_x
 
 
 " " Workaround for 'clipboard=autoselect', it copies mouse selection into
-" * register
+" * register (middle mouse button on linux)
 vmap <LeftRelease> "*ygv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

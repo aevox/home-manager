@@ -54,6 +54,7 @@ in {
 
     cheat
     silver-searcher
+    ripgrep
     fd
     xclip
     unrar
