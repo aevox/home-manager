@@ -6,7 +6,7 @@
 
   dconf.settings = {
     "org/gnome/shell/extensions/pop-shell" = {
-      activate-launcher = [];
+      activate-launcher = ["<super>Space"];
       mouse-cursor-follows-active-window = false;
       focus-left = ["<Super>t" "<Super>Left"];
       focus-down = ["<Super>s" "<Super>Down"];
