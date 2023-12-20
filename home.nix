@@ -78,6 +78,7 @@ in {
     python311Packages.jedi
 
     # Apps
+    xfce.xfce4-terminal
     libreoffice
     okular
     thunderbird
@@ -154,14 +155,20 @@ in {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
-      font_size = "10";
-      window_padding_width = "3";
+      font_size = "12";
+      window_padding_width = "4";
       enable_audio_bell = "no";
       font_family = "Hack Nerd Font Regular";
       bold_font = "Hack Nerd Bold";
       italic_font = "Hack Nerd Italic";
       bold_italic_font = "Hack Nerd Bold Italic";
       background_opacity = "0.9";
+    };
+    keybindings = {
+      "alt+up" = "send_text all \\x1b[A"; # Make alt + arrow = arrow
+      "alt+down" = "send_text all \\x1b[B";
+      "alt+right" = "send_text all \\x1b[C";
+      "alt+left" = "send_text all \\x1b[D";
     };
   };
 
