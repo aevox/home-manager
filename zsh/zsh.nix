@@ -58,7 +58,7 @@
     enable = false;
     enableZshIntegration = true;
     settings = {
-      format = "$all $kubernetes$line_break$character";
+      format = "$all$kubernetes$line_break$character";
       right_format = "$cmd_duration";
       add_newline = false;
       directory = {
@@ -66,7 +66,7 @@
         truncate_to_repo = false;
         style = "blue";
         before_repo_root_style = "blue";
-        repo_root_style = "bold blue";
+        repo_root_style = "bold bright-blue";
         truncation_symbol = "…/";
       };
       time = {
